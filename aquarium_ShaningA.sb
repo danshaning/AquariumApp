@@ -1,0 +1,77 @@
+'Shaning Ayah 
+'CIS 105-300
+'Aquarium exercise
+
+
+'set up graphics window
+GraphicsWindow.Title = "Aquarium by Daniel"
+GraphicsWindow.BackgroundColor = "#1E90FF"
+GraphicsWindow.Width = 600
+GraphicsWindow.Height = 400
+
+'background sound setup
+Sound.Play(Program.Directory +"\aquarium.mp3")
+
+
+'Unaminated images at the bottom
+coral1= Program.Directory + "\coral1.gif"
+coral2= Program.Directory + "\coral2.gif"
+coral3= Program.Directory + "\coral3.gif"
+coral4= Program.Directory + "\coral4.gif"
+conch = Program.Directory + "\conch.gif"
+
+'Setting the images at the bottom
+GraphicsWindow.DrawResizedImage(coral1, 50, 300, 100, 100)
+GraphicsWindow.DrawResizedImage(coral2, 150, 300, 100, 100)
+GraphicsWindow.DrawResizedImage(coral3, 250, 300, 100, 100)
+GraphicsWindow.DrawResizedImage(coral4, 400, 300, 100, 100)
+GraphicsWindow.DrawResizedImage(conch, 500, 300, 100, 100)
+
+
+'Setting up the animated objects
+
+starfish = Shapes.AddImage(Program.Directory + "\starfish.gif")
+Shapes.Move(starfish, 0, 0)
+Shapes.Animate(starfish, 500, 6000, 100000)
+
+goldfish1 = Shapes.AddImage(Program.Directory + "\goldfish1.gif")
+Shapes.Move(goldfish1, -75, 150)
+Shapes.Animate(goldfish1, 700, -200, 10000)
+
+goldfish2 = Shapes.AddImage(Program.Directory + "\goldfish2.gif")
+Shapes.Move(goldfish2, 650, 200)
+Shapes.Animate(goldfish2, -200, 200, 10000)
+
+grayfish1 = Shapes.AddImage(Program.Directory + "\grayfish1.gif")
+Shapes.Move(grayfish1, 150, -100)
+Shapes.Animate(grayfish1, 150, 700, 10000)
+
+grayfish2 = Shapes.AddImage(Program.Directory + "\grayfish2.gif")
+Shapes.Move(grayfish2, 350, 500)
+Shapes.Animate(grayfish2, -150, -100, 10000)
+
+seahorse1 = FCControls.AddImage(Program.Directory + "\seahorse1.gif")
+FCControls.SetWidth(seahorse1, 100)
+FCControls.Move(seahorse1, 100,100)
+seahorse2 = FCControls.AddImage(Program.Directory + "\seahorse2.gif")
+FCControls.Move(seahorse2, 300, 200)
+FCControls.SetWidth(seahorse2, 75)
+
+'Creating the subroutines
+Sub seahorse1_click
+  FCControls.MoveAsAnimation(seahorse1, 700, 100, 10000)
+EndSub
+
+Sub seahorse2_click
+  FCControls.MoveAsAnimation(seahorse2, 50, -200, 10000)
+EndSub
+
+'Wiring the subroutine to the variables
+
+FCControls.RegisterMouseDownEvent(seahorse1, "seahorse1_click")
+FCControls.RegisterMouseDownEvent(seahorse2, "seahorse2_click")
+
+
+
+
+  
